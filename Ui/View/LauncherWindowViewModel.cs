@@ -15,7 +15,7 @@ namespace _1RM.View
 {
     public class LauncherWindowViewModel : NotifyPropertyChangedBaseScreen
     {
-        public const double LAUNCHER_LIST_AREA_WIDTH = 400;
+        public const double LAUNCHER_LIST_AREA_WIDTH = 600;
         public const double LAUNCHER_GRID_KEYWORD_HEIGHT = 46;
         public const double LAUNCHER_SERVER_LIST_ITEM_HEIGHT = 40;
         public const double LAUNCHER_ACTION_LIST_ITEM_HEIGHT = 34;
