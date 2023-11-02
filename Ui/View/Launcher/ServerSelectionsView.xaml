@@ -72,7 +72,7 @@
 
             <DataTemplate DataType="{x:Type view:ProtocolBaseViewModel}">
                 <Grid Height="{x:Static view:LauncherWindowViewModel.LAUNCHER_SERVER_LIST_ITEM_HEIGHT}"
-                      Width="{x:Static view:LauncherWindowViewModel.LAUNCHER_LIST_AREA_WIDTH}">
+                      Width="Auto">
                     <!--<Grid.InputBindings>
                         <MouseBinding MouseAction="LeftDoubleClick" Command="{Binding CmdConnServer}"></MouseBinding>
                         <MouseBinding MouseAction="RightClick" 
@@ -201,23 +201,30 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <Grid Background="{DynamicResource PrimaryMidBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
 
         <!--servers list title-->
-        <Grid>
+        <Grid Grid.ColumnSpan="2" 
+              Width="Auto">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
             <Grid Name="GridKeyword"
-                  Width="{x:Static view:LauncherWindowViewModel.LAUNCHER_LIST_AREA_WIDTH}" 
+                  Width="Auto"
                   Height="{x:Static view:LauncherWindowViewModel.LAUNCHER_GRID_KEYWORD_HEIGHT}">
                 <TextBox Name="TbKeyWord"
                          Foreground="{DynamicResource PrimaryTextBrush}"
                          PreviewKeyDown="TbKeyWord_OnPreviewKeyDown"
-                         Margin="10 0 0 0"
+                         Margin="10,0,0,2"
                          Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}"
-                         Style="{StaticResource SearchBoxTbKeyWordStyle}"></TextBox>
+                         Width="Auto"
+                         Style="{StaticResource SearchBoxTbKeyWordStyle}" 
+                         TextChanged="TbKeyWord_TextChanged"/>
 
                 <!-- show tags -->
                 <Grid Height="40" HorizontalAlignment="Right" Visibility="{Binding TagFilters.Count, Converter={StaticResource ConverterEqual2Collapsed}, ConverterParameter='0'}">
@@ -279,12 +286,12 @@
 
 
         <!--actions of selected server-->
-        <Grid Name="GridActionsList" Visibility="Hidden" Background="{DynamicResource PrimaryMidBrush}">
+        <Grid Name="GridActionsList" Visibility="Hidden" Background="{DynamicResource PrimaryMidBrush}" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid Width="{x:Static view:LauncherWindowViewModel.LAUNCHER_LIST_AREA_WIDTH}" 
+            <Grid Width="Auto" 
                       Height="{x:Static view:LauncherWindowViewModel.LAUNCHER_GRID_KEYWORD_HEIGHT}">
                 <Grid VerticalAlignment="Center">
                     <Grid.ColumnDefinitions>

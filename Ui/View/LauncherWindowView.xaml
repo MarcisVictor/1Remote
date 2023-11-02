@@ -42,7 +42,7 @@
                     </Border.Effect>
 
                     <Grid Clip="{Binding GridMainClip}" 
-                          Width="{x:Static view:LauncherWindowViewModel.LAUNCHER_LIST_AREA_WIDTH}" 
+                          Width="Auto" 
                           Height="{Binding GridMainHeight}">
                         <ContentControl Name="ServerSelectionsView" 
                                         IsTabStop="False"
