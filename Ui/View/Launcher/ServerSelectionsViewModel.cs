@@ -109,7 +109,8 @@ namespace _1RM.View.Launcher
                         {
                             try
                             {
-                                view.ListBoxSelections.ScrollIntoView(view.ListBoxSelections.SelectedItem);
+                                view.ListBoxSelections.SelectedIndex = value;
+	                        view.ListBoxSelections.ScrollIntoView(view.ListBoxSelections.SelectedIndex);
                             }
                             catch (Exception)
                             {
@@ -117,7 +118,7 @@ namespace _1RM.View.Launcher
                             }
                         });
                     }
-                    RaisePropertyChanged(nameof(SelectedItem));
+                    RaisePropertyChanged(nameof(SelectedIndex));
                 }
             }
         }
