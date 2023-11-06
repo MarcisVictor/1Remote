@@ -294,5 +294,10 @@ namespace _1RM.View.Launcher
                 e.Handled = true;
             }
         }
+
+        private void TbKeyWord_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

@@ -120,5 +120,15 @@ namespace _1RM.View.Launcher
                 vm.SelectedIndex = 0;
             }
         }
+
+        private void TbKeyWord_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ListBoxHistory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
