@@ -312,7 +312,7 @@ namespace _1RM.View.Editor
             get
             {
                 if (_cmdSave != null) return _cmdSave;
-                _cmdSave = new RelayCommand((o) =>
+                _cmdSave = new((o) =>
                 {
                     if (string.IsNullOrEmpty(Server.DisplayName) || EditorViewModel?.CanSave() != true)
                         return;
@@ -441,27 +441,6 @@ namespace _1RM.View.Editor
                                 {
                                     ret = _globalData.AddServer(Server, AddToDataSource);
                                 }
-
-                                //if (ret.IsSuccess && Server is RDP rdp)
-                                //{
-                                //    try
-                                //    {
-                                //        // try read user name & password from CredentialManagement.
-                                //        using var cred = new CredentialManagement.Credential()
-                                //        {
-                                //            Target = "TERMSRV/" + rdp.Address,
-                                //            Type = CredentialType.Generic,
-                                //            Password = rdp.Password,
-                                //            Username = rdp.UserName,
-                                //            PersistanceType = PersistanceType.LocalComputer,
-                                //        };
-                                //        cred.Save();
-                                //    }
-                                //    catch (Exception)
-                                //    {
-                                //        // ignored
-                                //    }
-                                //}
                             }
 
                             if (ret.IsSuccess)
